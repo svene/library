@@ -1,0 +1,3 @@
+dependencies {
+	compile project(':1_application_business_rules')
+}
