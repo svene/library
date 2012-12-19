@@ -1,26 +1,31 @@
-apply plugin: 'java'
-apply plugin: 'idea'
 apply plugin: 'application'
 
 mainClassName = 'org.svenehrke.library.Main'
 
-idea {
-	project {
-		jdkName = '1.6'
-	}
-	module {
-		downloadSources = true
-		downloadJavadoc = false
-	}
-}
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'idea'
 
-repositories {
-	mavenCentral()
-}
 
-dependencies {
-	compile 'org.hsqldb:hsqldb:2.2.8'
-	testCompile 'junit:junit:4.10'
+	idea {
+		project {
+			jdkName = '1.6'
+		}
+		module {
+			downloadSources = true
+			downloadJavadoc = false
+		}
+	}
+
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		compile 'org.hsqldb:hsqldb:2.2.8'
+		testCompile 'junit:junit:4.10'
+	}
+
 }
 
 task wrapper(type: Wrapper) {
