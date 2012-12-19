@@ -1,21 +1,21 @@
 apply plugin: 'application'
+apply plugin: 'idea'
 
 mainClassName = 'org.svenehrke.library.Main'
+
+idea {
+	project {
+		jdkName = '1.6'
+	}
+	module {
+		downloadSources = true
+		downloadJavadoc = false
+	}
+}
 
 subprojects {
 	apply plugin: 'java'
 	apply plugin: 'idea'
-
-
-	idea {
-		project {
-			jdkName = '1.6'
-		}
-		module {
-			downloadSources = true
-			downloadJavadoc = false
-		}
-	}
 
 	repositories {
 		mavenCentral()
